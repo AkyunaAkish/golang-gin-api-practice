@@ -51,12 +51,14 @@ func main() {
 
 // getAlbums responds with the list of all albums as JSON.
 func getAlbums(c *gin.Context) {
-	fmt.Println("Get Albums@")
+	fmt.Println("Get Albums")
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
 // postAlbums adds an album from JSON received in the request body.
 func postAlbums(c *gin.Context) {
+	fmt.Println("Post Albums")
+
 	var newAlbum album
 
 	// Call BindJSON to bind the received JSON to
@@ -73,6 +75,8 @@ func postAlbums(c *gin.Context) {
 // getAlbumByID locates the album whose ID value matches the id
 // parameter sent by the client, then returns that album as a response.
 func getAlbumByID(c *gin.Context) {
+	fmt.Println("Get Album By ID")
+
 	id := c.Param("id")
 
 	// Loop over the list of albums, looking for
